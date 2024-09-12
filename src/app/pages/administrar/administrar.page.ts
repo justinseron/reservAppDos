@@ -18,6 +18,7 @@ export class AdministrarPage implements OnInit {
     nombre_equipo: new FormControl('',[])
   });
   usuarios:any[] = [];
+  botonModificar: boolean = true;
 
   //el servicio nos permite trabajar la información:
   constructor(private usuarioService: UsuarioService) { }
@@ -37,12 +38,15 @@ export class AdministrarPage implements OnInit {
 
   buscar(rut_buscar:string){
     this.persona.setValue( this.usuarioService.getUsuario(rut_buscar) );
+    this.botonModificar = false;
   }
 
   modificar(){
     var rut_buscar: string = this.persona.controls.rut.value || "";
     if(this.usuarioService.updateUsuario( rut_buscar , this.persona.value)){
       alert("USUARIO MODIFICADO CON ÉXITO!");
+      this.botonModificar = true;
+      this.persona.reset();
     }else{
       alert("ERROR! USUARIO NO MODIFICADO!");
     }
