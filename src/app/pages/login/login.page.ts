@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -22,14 +23,14 @@ export class LoginPage implements OnInit {
   email: string = "";
   password: string = "";
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
   }
 
   //método asociado al boton para hacer un login:
   login(){
-    if(this.email=="pavel@gmail.com" && this.password=="Jiulliet"){
+    if(this.usuarioService.login(this.email,this.password)){
       this.router.navigate(['/home']);
     }else{
       alert("CORREO O CONTRASEÑA INCORRECTOS!");
