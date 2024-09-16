@@ -11,11 +11,15 @@ export class AdministrarPage implements OnInit {
 
   persona = new FormGroup({
     rut: new FormControl('',[Validators.required,Validators.pattern("[0-9]{7,8}-[0-9kK]{1}")]),
-    nombre: new FormControl('',[Validators.required,Validators.pattern("[a-z]{3,5}")]),
+    nombre: new FormControl('',[Validators.required,Validators.pattern("[a-z]{3,}")]),
     fecha_nacimiento: new FormControl('',[Validators.required]),
     genero: new FormControl('',[Validators.required]),
+    correo: new FormControl('',[Validators.required, Validators.pattern("[a-zA-Z0-9.]+(@duocuc.cl)")]),
+    contrasena: new FormControl('',[Validators.required, Validators.minLength(8), Validators.maxLength(18)]),
+    valida_contrasena: new FormControl('',[Validators.required, Validators.minLength(8), Validators.maxLength(18)]),
     tiene_equipo: new FormControl('no',[Validators.required]),
-    nombre_equipo: new FormControl('',[])
+    nombre_equipo: new FormControl('',[]),
+    tipo_usuario: new FormControl('', [Validators.required])
   });
   usuarios:any[] = [];
   botonModificar: boolean = true;

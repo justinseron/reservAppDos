@@ -12,9 +12,12 @@ export class UsuarioService {
       "nombre": "alambrito",
       "fecha_nacimiento": "1990-03-24",
       "genero": "Masculino",
+      "correo": "admin@duocuc.cl",
+      "contrasena": "admin123",
+      "valida_contrasena": "admin123",
       "tiene_equipo": "",
       "nombre_equipo": "minions",
-      "tipo_usuario": "administrador"
+      "tipo_usuario": "Administrador"
     }
   ];
 
