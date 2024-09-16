@@ -1,13 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>recuperar</ion-title>
+    <ion-title>Recuperar</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">recuperar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>Recuperar de usuario</ion-card-header>
+    <ion-card-content>
+      <ion-input [(ngModel)]="email" type="email" label="Correo" labelPlacement="stacked" fill="outline"></ion-input>
+      <br>
+      <ion-button (click)="recuperar()" size="block" color="success">RECUPERAR</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

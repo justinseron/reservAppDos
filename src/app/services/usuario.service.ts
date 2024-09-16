@@ -63,4 +63,8 @@ export class UsuarioService {
     return this.usuarios.find(elemento=> elemento.correo==correo && elemento.contrasena==contrasena);
   }
 
+  public recuperarUsuario(correo:string){
+    return this.usuarios.find(elemento=> elemento.correo == correo);
+  }
+
 }
