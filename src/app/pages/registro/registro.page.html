@@ -19,6 +19,9 @@
         <ion-select-option>Femenino</ion-select-option>
         <ion-select-option>Otro</ion-select-option>
       </ion-select>
+      <ion-input formControlName="correo" type="email" labelPlacement="stacked" label="Correo"></ion-input>
+      <ion-input formControlName="contrasena" type="password" labelPlacement="stacked" label="Contraseña"></ion-input>
+      <ion-input formControlName="valida_contrasena" type="password" labelPlacement="stacked" label="Repita contraseña"></ion-input>
       
       <ion-label>¿Tiene equipo?</ion-label>
       <ion-radio-group formControlName="tiene_equipo">
@@ -28,12 +31,8 @@
       
       <ion-input *ngIf="persona.controls.tiene_equipo.value=='si'" formControlName="nombre_equipo" type="text" label="Nombre equipo" labelPlacement="stacked"></ion-input>
 
-      <ion-button id="present-alert" [disabled]="persona.invalid" type="submit" size="block" color="warning">REGISTRAR</ion-button>
-      <ion-alert trigger="present-alert" header="alert!" [buttons]="alertButtons" (didDismiss)="setResult($event)"></ion-alert>
+      <ion-button [disabled]="persona.invalid" type="submit" size="block" color="warning">REGISTRAR</ion-button>
     </form>
-    <!--esto es solo para hacer un test-->
-    <p>{{persona.value | json}}</p>
-    <p>{{persona.value.nombre}}</p>
   </ion-card>
 
 </ion-content>
