@@ -8,15 +8,15 @@ export class UsuarioService {
   //acá podemos crear variables:
   usuarios: any[] = [
     {
-      "rut": 16666666,
+      "rut": "16666666-6",
       "nombre": "alambrito",
       "fecha_nacimiento": "1990-03-24",
       "genero": "Masculino",
       "correo": "admin@duocuc.cl",
-      "contrasena": "admin123",
-      "valida_contrasena": "admin123",
-      "tiene_equipo": "",
-      "nombre_equipo": "minions",
+      "contrasena": "Admin123.",
+      "valida_contrasena": "Admin123.",
+      "tiene_equipo": "no",
+      "nombre_equipo": "",
       "tipo_usuario": "Administrador"
     }
   ];
