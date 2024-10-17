@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-reserva',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleReservaPage implements OnInit {
 
-  constructor() { }
+  id: number = 0;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.id = +(this.activatedRoute.snapshot.paramMap.get("id") || "");
   }
 
 }
